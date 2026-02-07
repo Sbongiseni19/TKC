@@ -1,0 +1,1475 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo-removebg-preview.png" type="image/x-icon">
+    <title>TKC Properties | Think Property Think TKC Property</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", system-ui, sans-serif;
+        }
+
+        :root {
+            --primary: #0f4c75;
+            --secondary: #3282b8;
+            --accent: #ff7e30;
+            --light: #f8f9fa;
+            --dark: #333;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ---------- HEADER & NAVIGATION ---------- */
+        .top-bar {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info-top {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info-top a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info-top a:hover {
+            color: var(--accent);
+        }
+
+        nav {
+            background: white;
+            padding: 0 20px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            height: 70px;
+            width: auto;
+        }
+
+        .brand-text h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            line-height: 1.2;
+        }
+
+        .brand-text .slogan {
+            color: var(--secondary);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* ---------- HERO ---------- */
+        header {
+            background: linear-gradient(rgba(15, 76, 117, 0.85), rgba(50, 130, 184, 0.9)), 
+                        url('tkc.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            background: white;
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* ---------- CARDS ---------- */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 5px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            background: #f0f7ff;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* ---------- GALLERY ---------- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(15, 76, 117, 0.9));
+            color: white;
+            padding: 20px;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* ---------- CONTACT ---------- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        form input:focus, form select:focus, form textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(50, 130, 184, 0.1);
+        }
+
+        form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        form button:hover {
+            background: #083b5c;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(15, 76, 117, 0.2);
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* ---------- WHATSAPP ---------- */
+        .whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25d366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp:hover {
+            background: #1ebe5d;
+            transform: scale(1.05);
+        }
+
+        /* ---------- NOTIFICATION SYSTEM ---------- */
+        .notification-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .notification-box {
+            background: white;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .notification-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .notification-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            animation: bounce 1s ease infinite;
+            display: inline-block;
+        }
+
+        .notification-header h3 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .notification-body {
+            padding: 35px;
+            text-align: center;
+        }
+
+        .notification-message {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .notification-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: left;
+            border-left: 4px solid var(--accent);
+        }
+
+        .notification-detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .notification-detail:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .notification-detail strong {
+            color: var(--primary);
+            min-width: 120px;
+        }
+
+        .notification-detail span {
+            color: #666;
+            text-align: right;
+            flex: 1;
+        }
+
+        .notification-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .notification-btn {
+            flex: 1;
+            padding: 16px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .notification-btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(15, 76, 117, 0.3);
+        }
+
+        .notification-btn-primary:hover {
+            background: #083b5c;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(15, 76, 117, 0.4);
+        }
+
+        .notification-btn-secondary {
+            background: #f0f7ff;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .notification-btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .notification-footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .notification-footer strong {
+            color: var(--primary);
+        }
+
+        .notification-footer i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes confetti {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Success variation */
+        .notification-success .notification-header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+
+        .notification-success .notification-icon {
+            color: #28a745;
+        }
+
+        /* Warning variation */
+        .notification-warning .notification-header {
+            background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+        }
+
+        .notification-warning .notification-icon {
+            color: #ffc107;
+        }
+
+        /* Error variation */
+        .notification-error .notification-header {
+            background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
+        }
+
+        .notification-error .notification-icon {
+            color: #dc3545;
+        }
+
+        /* Confetti effect */
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent);
+            top: -20px;
+            z-index: 10000;
+            opacity: 0;
+        }
+
+        .confetti:nth-child(odd) {
+            background-color: var(--primary);
+        }
+
+        .confetti:nth-child(even) {
+            background-color: var(--secondary);
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .notification-box {
+                max-width: 450px;
+            }
+
+            .notification-header {
+                padding: 25px;
+            }
+
+            .notification-body {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                gap: 15px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 25px;
+                right: 20px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            header {
+                padding: 80px 20px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .notification-box {
+                width: 95%;
+                max-width: 400px;
+            }
+
+            .notification-actions {
+                flex-direction: column;
+            }
+
+            .notification-header {
+                padding: 20px;
+            }
+
+            .notification-body {
+                padding: 20px;
+            }
+
+            .notification-detail {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .notification-detail strong {
+                min-width: auto;
+            }
+
+            .notification-detail span {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .notification-box {
+                width: 98%;
+                max-width: 350px;
+            }
+
+            .notification-header h3 {
+                font-size: 1.6rem;
+            }
+
+            .notification-message {
+                font-size: 1.1rem;
+            }
+
+            .notification-btn {
+                padding: 14px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Confetti elements (will be created dynamically) -->
+<div id="confettiContainer"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="contact-info-top">
+        <a href="tel:012 753 1177"><i class="fas fa-phone"></i> 012 753 1177</a>
+        <a href="mailto:info@tkcproperties.co.za"><i class="fas fa-envelope"></i> info@tkcproperties.co.za</a>
+    </div>
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <div class="logo-container">
+            <img src="logo-removebg-preview.png" alt="TKC Properties Logo" class="logo">
+            <div class="brand-text">
+                <h2>TKC Properties</h2>
+                <div class="slogan">Think Property, Think TKC Property</div>
+            </div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#accommodation">Student Accommodation</a></li>
+            <li><a href="#rentals">Room Rentals</a></li>
+            <li><a href="#driving">Driving School</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header id="home">
+    <div class="hero-content">
+        <h1>Your Trusted Property Partner</h1>
+        <p class="hero-tagline">Student Accommodation · Room Rentals · Driving School</p>
+        
+        <div class="hero-buttons">
+            <a href="student.html" class="btn"><i class="fas fa-home"></i> Student Accommodation</a>
+            <a href="#rentals" class="btn btn-secondary"><i class="fas fa-door-open"></i> Room Rentals</a>
+            <a href="driving.html" class="btn"><i class="fas fa-car"></i> Driving School</a>
+        </div>
+    </div>
+</header>
+
+<!-- SERVICES OVERVIEW -->
+<section>
+    <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Providing quality accommodation and driving education services with a focus on safety, comfort, and customer satisfaction.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Student Accommodation</h3>
+            <p>Safe, comfortable living spaces designed specifically for students near educational institutions.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <h3>Room Rentals</h3>
+            <p>Affordable room rentals for individuals and professionals in convenient locations.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-car"></i>
+            </div>
+            <h3>Driving School</h3>
+            <p>Professional driving instruction with certified instructors and modern vehicles.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Safe & Secure</h3>
+            <p>All our properties feature security measures to ensure peace of mind for our tenants.</p>
+        </div>
+    </div>
+</section>
+
+<!-- STUDENT ACCOMMODATION -->
+<section id="accommodation" style="background-color: #f8f9fa;">
+    <div class="section-header">
+        <h2>Student Accommodation</h2>
+        <p>We provide a clean, secure, and student-friendly living environment designed to support academic success and comfortable living.</p>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="mazuri2.jpg" alt="Student Accommodation">
+            <div class="gallery-overlay">
+                <h3>Modern Student Rooms</h3>
+                <p>Fully furnished with study areas</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="lasiandra.jpg" alt="Student Accommodation">
+            <div class="gallery-overlay">
+                <h3>Common Areas</h3>
+                <p>Spacious lounges for socializing</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="linaria.jpg" alt="Student Accommodation">
+            <div class="gallery-overlay">
+                <h3>Study Facilities</h3>
+                <p>Quiet spaces for academic focus</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ROOM RENTALS -->
+<section id="rentals">
+    <div class="section-header">
+        <h2>Room Rentals</h2>
+        <p>TKC Properties offers affordable room rentals suitable for individuals and working professionals seeking comfortable accommodation.</p>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="building4.jpg" alt="Room Rental">
+            <div class="gallery-overlay">
+                <h3>Private Rooms</h3>
+                <p>Comfortable and private living spaces</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="kitchen.jpg" alt="Room Rental">
+            <div class="gallery-overlay">
+                <h3>Fully Equipped Kitchens</h3>
+                <p>Modern kitchen facilities</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="building1.jpg" alt="Room Rental">
+            <div class="gallery-overlay">
+                <h3>Secure Access</h3>
+                <p>24/7 security for peace of mind</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DRIVING SCHOOL -->
+<section id="driving" style="background-color: #f8f9fa;">
+    <div class="section-header">
+        <h2>TKC Driving School</h2>
+        <p>Our driving school provides professional instruction with experienced instructors to help learners become confident and responsible drivers.</p>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="umuntu.jpg" alt="Driving School">
+            <div class="gallery-overlay">
+                <h3>Professional Instructors</h3>
+                <p>Certified and experienced teachers</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="car4.jpg" alt="Driving School">
+            <div class="gallery-overlay">
+                <h3>Modern Vehicles</h3>
+                <p>Well-maintained cars for training</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="car1.jpg" alt="Driving School">
+            <div class="gallery-overlay">
+                <h3>Flexible Scheduling</h3>
+                <p>Lessons that fit your timetable</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="section-header">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for inquiries about our accommodation options or driving school services.</p>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <div class="contact-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4>Address</h4>
+                    <p>TKC Properties, 123 Main Street, City Center</p>
+                </div>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h4>Phone</h4>
+                    <p>012 753 1177</p>
+                </div>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p>info@tkcproperties.co.za</p>
+                </div>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <h4>Office Hours</h4>
+                    <p>Monday – Friday: 08:00 – 17:00<br>Saturday: 09:00 – 13:00</p>
+                </div>
+            </div>
+        </div>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="your.email@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="012 345 6789" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="service">Select Service</label>
+                <select id="service" required>
+                    <option value="">Choose a Service</option>
+                    <option>Student Accommodation</option>
+                    <option>Room Rentals</option>
+                    <option>Driving School</option>
+                    <option>General Inquiry</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+            </div>
+            
+            <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>TKC Properties</h3>
+            <p>Think Property, Think TKC Property. Providing quality accommodation and driving education services since 2010.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/TKCProperties"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#accommodation">Student Accommodation</a></li>
+                <li><a href="#rentals">Room Rentals</a></li>
+                <li><a href="#driving">Driving School</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Our Services</h3>
+            <ul class="footer-links">
+                <li><a href="#accommodation">Student Housing</a></li>
+                <li><a href="#rentals">Room Rentals</a></li>
+                <li><a href="#driving">Driving Lessons</a></li>
+                <li><a href="#driving">License Testing</a></li>
+                <li><a href="#contact">Property Management</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Contact Info</h3>
+            <ul class="footer-links">
+                <li><i class="fas fa-map-marker-alt"></i> TKC Properties, City Center</li>
+                <li><i class="fas fa-phone"></i>012 753 1177</li>
+                <li><i class="fas fa-envelope"></i> info@tkcproperties.co.za</li>
+                <li><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm, Sat: 9am-1pm</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>© 2026 TKC Properties. All rights reserved. | Think Property, Think TKC Property.</p>
+    </div>
+</footer>
+
+<a class="whatsapp"
+   href="https://wa.me/27000000000?text=Hi%20TKC%20Properties,%20I%20would%20like%20to%20enquire."
+   target="_blank">
+    <i class="fab fa-whatsapp"></i> WhatsApp Us
+</a>
+
+<!-- Notification Overlay -->
+<div class="notification-overlay" id="notificationOverlay">
+    <div class="notification-box" id="notificationBox">
+        <div class="notification-header">
+            <div class="notification-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You!</h3>
+        </div>
+        
+        <div class="notification-body">
+            <p class="notification-message" id="notificationMessage">
+                Your inquiry has been successfully submitted. We'll contact you shortly.
+            </p>
+            
+            <div class="notification-details" id="notificationDetails">
+                <!-- Details will be added dynamically -->
+            </div>
+            
+            <div class="notification-actions">
+                <button class="notification-btn notification-btn-primary" id="notificationCloseBtn">
+                    <i class="fas fa-check"></i> OK, Got It
+                </button>
+                <button class="notification-btn notification-btn-secondary" id="notificationNewBtn">
+                    <i class="fas fa-plus"></i> New Inquiry
+                </button>
+            </div>
+        </div>
+        
+        <div class="notification-footer">
+            <i class="fas fa-clock"></i> We typically respond within <strong>24 hours</strong>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuBtn.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+    
+    // Form submission with enhanced notification
+    const contactForm = document.getElementById('contactForm');
+    const notificationOverlay = document.getElementById('notificationOverlay');
+    const notificationBox = document.getElementById('notificationBox');
+    const notificationMessage = document.getElementById('notificationMessage');
+    const notificationDetails = document.getElementById('notificationDetails');
+    const notificationCloseBtn = document.getElementById('notificationCloseBtn');
+    const notificationNewBtn = document.getElementById('notificationNewBtn');
+    const confettiContainer = document.getElementById('confettiContainer');
+
+    // Function to create confetti effect
+    function createConfetti() {
+        confettiContainer.innerHTML = '';
+        for (let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.width = Math.random() * 10 + 10 + 'px';
+            confetti.style.height = Math.random() * 10 + 10 + 'px';
+            confetti.style.backgroundColor = i % 3 === 0 ? 'var(--accent)' : 
+                                           i % 3 === 1 ? 'var(--primary)' : 'var(--secondary)';
+            confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+            confetti.style.animation = `confetti ${Math.random() * 3 + 2}s linear forwards`;
+            confetti.style.animationDelay = Math.random() * 1 + 's';
+            confettiContainer.appendChild(confetti);
+        }
+        
+        // Remove confetti after animation
+        setTimeout(() => {
+            confettiContainer.innerHTML = '';
+        }, 5000);
+    }
+
+    // Function to show notification
+    function showNotification(title, message, details, type = 'success') {
+        // Set notification type
+        notificationBox.className = 'notification-box';
+        if (type) {
+            notificationBox.classList.add(`notification-${type}`);
+        }
+        
+        // Set content
+        document.querySelector('.notification-header h3').textContent = title;
+        notificationMessage.textContent = message;
+        
+        // Add details if provided
+        if (details && Object.keys(details).length > 0) {
+            notificationDetails.innerHTML = '';
+            for (const [key, value] of Object.entries(details)) {
+                const detailDiv = document.createElement('div');
+                detailDiv.className = 'notification-detail';
+                detailDiv.innerHTML = `<strong>${key}:</strong> <span>${value}</span>`;
+                notificationDetails.appendChild(detailDiv);
+            }
+            notificationDetails.style.display = 'block';
+        } else {
+            notificationDetails.style.display = 'none';
+        }
+        
+        // Show notification with animation
+        notificationOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        
+        // Add confetti effect for success notifications
+        if (type === 'success') {
+            createConfetti();
+        }
+        
+        // Add a subtle pulse animation after slide up
+        setTimeout(() => {
+            notificationBox.style.animation = 'pulse 1s ease';
+            setTimeout(() => {
+                notificationBox.style.animation = '';
+            }, 1000);
+        }, 600);
+    }
+
+    // Function to hide notification
+    function hideNotification() {
+        notificationOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+
+    // Form submission handler
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value;
+        
+        // Show success notification
+        showNotification(
+            'Thank You!',
+            `Your inquiry has been successfully submitted. We'll contact you shortly via email or phone.`,
+            {
+                'Name': name,
+                'Service': service,
+                'Contact Email': email,
+                'Phone': phone
+            },
+            'success'
+        );
+        
+        // Reset form
+        contactForm.reset();
+    });
+
+    // Notification button events
+    notificationCloseBtn.addEventListener('click', hideNotification);
+    notificationNewBtn.addEventListener('click', () => {
+        hideNotification();
+        // Scroll to form after a short delay
+        setTimeout(() => {
+            document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+        }, 300);
+    });
+
+    // Close notification when clicking outside the box
+    notificationOverlay.addEventListener('click', (e) => {
+        if (e.target === notificationOverlay) {
+            hideNotification();
+        }
+    });
+
+    // Close notification with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && notificationOverlay.style.display === 'flex') {
+            hideNotification();
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if(this.getAttribute('href') === '#') return;
+            
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

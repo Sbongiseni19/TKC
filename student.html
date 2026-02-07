@@ -1,0 +1,1804 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo-removebg-preview.png" type="image/x-icon">
+    <title>TKC Student Accommodation | Safe & Comfortable Student Housing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", system-ui, sans-serif;
+        }
+
+        :root {
+            --primary: #0f4c75;
+            --secondary: #3282b8;
+            --accent: #ff7e30;
+            --light: #f8f9fa;
+            --dark: #333;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ---------- HEADER & NAVIGATION ---------- */
+        .top-bar {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info-top {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info-top a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info-top a:hover {
+            color: var(--accent);
+        }
+
+        nav {
+            background: white;
+            padding: 0 20px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            height: 70px;
+            width: auto;
+        }
+
+        .brand-text h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            line-height: 1.2;
+        }
+
+        .brand-text .slogan {
+            color: var(--secondary);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* ---------- HERO ---------- */
+        .accommodation-hero {
+            background: linear-gradient(rgba(15, 76, 117, 0.85), rgba(50, 130, 184, 0.9)), 
+                        url('tkc.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accommodation-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* ---------- SECTIONS ---------- */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* ---------- LOCATIONS ---------- */
+        .locations-section {
+            background-color: #f8f9fa;
+        }
+
+        .locations-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .location-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .location-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .location-header {
+            background: var(--primary);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .location-header h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .location-address {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .location-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .location-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .location-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .location-features i {
+            color: var(--accent);
+        }
+
+        .services-list {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
+        .service-btn {
+            padding: 12px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            flex: 1;
+            min-width: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .service-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(15, 76, 117, 0.2);
+        }
+
+        .service-btn.rooms {
+            background: var(--primary);
+        }
+
+        .service-btn.kitchen {
+            background: var(--accent);
+        }
+
+        /* ---------- AMENITIES ---------- */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+
+        .amenity-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .amenity-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .amenity-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            min-width: 60px;
+            height: 60px;
+            background: rgba(255, 126, 48, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .amenity-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* ---------- GALLERY ---------- */
+        .gallery-section {
+            background-color: #f8f9fa;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(15, 76, 117, 0.9));
+            color: white;
+            padding: 20px;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* ---------- BOOKING FORM ---------- */
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: #666;
+        }
+
+        .selected-service-display {
+            background: #f0f7ff;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .selected-service-display span {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .change-service {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .change-service:hover {
+            background: #e56b1a;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        form input:focus, form select:focus, form textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(50, 130, 184, 0.1);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background: #083b5c;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(15, 76, 117, 0.2);
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 25px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-message i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* ---------- NOTIFICATION SYSTEM ---------- */
+        .notification-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .notification-box {
+            background: white;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .notification-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .notification-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            animation: bounce 1s ease infinite;
+            display: inline-block;
+        }
+
+        .notification-header h3 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .notification-body {
+            padding: 35px;
+            text-align: center;
+        }
+
+        .notification-message {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .notification-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: left;
+            border-left: 4px solid var(--accent);
+        }
+
+        .notification-detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .notification-detail:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .notification-detail strong {
+            color: var(--primary);
+            min-width: 120px;
+        }
+
+        .notification-detail span {
+            color: #666;
+            text-align: right;
+            flex: 1;
+        }
+
+        .notification-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .notification-btn {
+            flex: 1;
+            padding: 16px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .notification-btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(15, 76, 117, 0.3);
+        }
+
+        .notification-btn-primary:hover {
+            background: #083b5c;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(15, 76, 117, 0.4);
+        }
+
+        .notification-btn-secondary {
+            background: #f0f7ff;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .notification-btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .notification-footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .notification-footer strong {
+            color: var(--primary);
+        }
+
+        .notification-footer i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes confetti {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Success variation */
+        .notification-success .notification-header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+
+        .notification-success .notification-icon {
+            color: #28a745;
+        }
+
+        /* Warning variation */
+        .notification-warning .notification-header {
+            background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+        }
+
+        .notification-warning .notification-icon {
+            color: #ffc107;
+        }
+
+        /* Error variation */
+        .notification-error .notification-header {
+            background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
+        }
+
+        .notification-error .notification-icon {
+            color: #dc3545;
+        }
+
+        /* Confetti effect */
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent);
+            top: -20px;
+            z-index: 10000;
+            opacity: 0;
+        }
+
+        .confetti:nth-child(odd) {
+            background-color: var(--primary);
+        }
+
+        .confetti:nth-child(even) {
+            background-color: var(--secondary);
+        }
+
+        /* ---------- BACK TO HOME ---------- */
+        .back-home-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .back-home-btn:hover {
+            background: white;
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 992px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .accommodation-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .notification-box {
+                max-width: 450px;
+            }
+
+            .notification-header {
+                padding: 25px;
+            }
+
+            .notification-body {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                gap: 15px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 25px;
+                right: 20px;
+            }
+            
+            .booking-container {
+                padding: 30px 20px;
+            }
+            
+            .services-list {
+                flex-direction: column;
+            }
+            
+            .accommodation-hero {
+                padding: 80px 20px;
+            }
+            
+            .accommodation-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .notification-box {
+                width: 95%;
+                max-width: 400px;
+            }
+
+            .notification-actions {
+                flex-direction: column;
+            }
+
+            .notification-header {
+                padding: 20px;
+            }
+
+            .notification-body {
+                padding: 20px;
+            }
+
+            .notification-detail {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .notification-detail strong {
+                min-width: auto;
+            }
+
+            .notification-detail span {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .notification-box {
+                width: 98%;
+                max-width: 350px;
+            }
+
+            .notification-header h3 {
+                font-size: 1.6rem;
+            }
+
+            .notification-message {
+                font-size: 1.1rem;
+            }
+
+            .notification-btn {
+                padding: 14px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Confetti elements (will be created dynamically) -->
+<div id="confettiContainer"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="contact-info-top">
+        <a href="tel:012 753 1177"><i class="fas fa-phone"></i> 012 753 1177</a>
+        <a href="mailto:info@tkcproperties.co.za"><i class="fas fa-envelope"></i> info@tkcproperties.co.za</a>
+    </div>
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <div class="logo-container">
+            <img src="logo-removebg-preview.png" alt="TKC Properties Logo" class="logo">
+            <div class="brand-text">
+                <h2>TKC Student Accommodation</h2>
+                <div class="slogan">Think Property, Think TKC Property</div>
+            </div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#locations" class="active">Locations</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#booking">Book Now</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="accommodation-hero">
+    <div class="hero-content">
+        <h1>Student Accommodation</h1>
+        <p class="hero-tagline">Safe, comfortable, and student-friendly living spaces designed for academic success</p>
+        
+        <div class="hero-badges">
+            <div class="badge"><i class="fas fa-shield-alt"></i> Secure Properties</div>
+            <div class="badge"><i class="fas fa-wifi"></i> High-Speed WiFi</div>
+            <div class="badge"><i class="fas fa-book"></i> Study Areas</div>
+            <div class="badge"><i class="fas fa-users"></i> Social Spaces</div>
+        </div>
+    </div>
+</div>
+
+<!-- LOCATIONS -->
+<section id="locations" class="locations-section">
+    <div class="section-header">
+        <h2>Our Locations</h2>
+        <p>Choose from our well-located student accommodation properties, each offering modern facilities and a supportive community environment.</p>
+    </div>
+
+    <div class="locations-list">
+        <!-- Mazuri Location -->
+        <div class="location-card">
+            <div class="location-header">
+                <h3>Mazuri</h3>
+                <div class="location-address">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>374 LEYDS STREET</span>
+                </div>
+            </div>
+            <div class="location-body">
+                <ul class="location-features">
+                    <li><i class="fas fa-check"></i> Fully furnished rooms</li>
+                    <li><i class="fas fa-check"></i> 24/7 security</li>
+                    <li><i class="fas fa-check"></i> High-speed internet</li>
+                    <li><i class="fas fa-check"></i> Study lounges</li>
+                    <li><i class="fas fa-check"></i> Laundry facilities</li>
+                </ul>
+                <div class="services-list">
+                    <button class="service-btn rooms" onclick="selectService('Mazuri', 'Rooms')">
+                        <i class="fas fa-bed"></i> Rooms
+                    </button>
+                    <button class="service-btn kitchen" onclick="selectService('Mazuri', 'Kitchen')">
+                        <i class="fas fa-utensils"></i> Kitchen
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mazabuka Location -->
+        <div class="location-card">
+            <div class="location-header">
+                <h3>Mazabuka</h3>
+                <div class="location-address">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>27 TROYE STREET</span>
+                </div>
+            </div>
+            <div class="location-body">
+                <ul class="location-features">
+                    <li><i class="fas fa-check"></i> Private bathrooms</li>
+                    <li><i class="fas fa-check"></i> CCTV surveillance</li>
+                    <li><i class="fas fa-check"></i> Study desks in rooms</li>
+                    <li><i class="fas fa-check"></i> Common TV lounge</li>
+                    <li><i class="fas fa-check"></i> Secure parking</li>
+                </ul>
+                <div class="services-list">
+                    <button class="service-btn rooms" onclick="selectService('Mazabuka', 'Rooms')">
+                        <i class="fas fa-bed"></i> Rooms
+                    </button>
+                    <button class="service-btn kitchen" onclick="selectService('Mazabuka', 'Kitchen')">
+                        <i class="fas fa-utensils"></i> Kitchen
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nicola Location -->
+        <div class="location-card">
+            <div class="location-header">
+                <h3>Nicola</h3>
+                <div class="location-address">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>149 JOHNSTON STREET</span>
+                </div>
+            </div>
+            <div class="location-body">
+                <ul class="location-features">
+                    <li><i class="fas fa-check"></i> En-suite rooms available</li>
+                    <li><i class="fas fa-check"></i> 24/7 on-site manager</li>
+                    <li><i class="fas fa-check"></i> Gym access</li>
+                    <li><i class="fas fa-check"></i> Quiet study zones</li>
+                    <li><i class="fas fa-check"></i> Monthly cleaning service</li>
+                </ul>
+                <div class="services-list">
+                    <button class="service-btn rooms" onclick="selectService('Nicola', 'Rooms')">
+                        <i class="fas fa-bed"></i> Rooms
+                    </button>
+                    <button class="service-btn kitchen" onclick="selectService('Nicola', 'Kitchen')">
+                        <i class="fas fa-utensils"></i> Kitchen
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nebo-Hoff Location -->
+        <div class="location-card">
+            <div class="location-header">
+                <h3>Nebo-Hoff</h3>
+                <div class="location-address">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>39 TROYE STREET</span>
+                </div>
+            </div>
+            <div class="location-body">
+                <ul class="location-features">
+                    <li><i class="fas fa-check"></i> All utilities included</li>
+                    <li><i class="fas fa-check"></i> Access control system</li>
+                    <li><i class="fas fa-check"></i> Outdoor social area</li>
+                    <li><i class="fas fa-check"></i> Group study rooms</li>
+                    <li><i class="fas fa-check"></i> Bike storage</li>
+                </ul>
+                <div class="services-list">
+                    <button class="service-btn rooms" onclick="selectService('Nebo-Hoff', 'Rooms')">
+                        <i class="fas fa-bed"></i> Rooms
+                    </button>
+                    <button class="service-btn kitchen" onclick="selectService('Nebo-Hoff', 'Kitchen')">
+                        <i class="fas fa-utensils"></i> Kitchen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities">
+    <div class="section-header">
+        <h2>Our Amenities</h2>
+        <p>We provide everything you need for a comfortable and productive student life. All our properties include these essential amenities.</p>
+    </div>
+
+    <div class="amenities-grid">
+        <div class="amenity-item">
+            <div class="amenity-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="amenity-content">
+                <h3>24/7 Security</h3>
+                <p>CCTV surveillance, access control, and on-site security personnel for your safety.</p>
+            </div>
+        </div>
+        
+        <div class="amenity-item">
+            <div class="amenity-icon">
+                <i class="fas fa-wifi"></i>
+            </div>
+            <div class="amenity-content">
+                <h3>High-Speed WiFi</h3>
+                <p>Reliable internet connection for studying, streaming, and staying connected.</p>
+            </div>
+        </div>
+        
+        <div class="amenity-item">
+            <div class="amenity-icon">
+                <i class="fas fa-book"></i>
+            </div>
+            <div class="amenity-content">
+                <h3>Study Areas</h3>
+                <p>Quiet study lounges and group study rooms for academic success.</p>
+            </div>
+        </div>
+        
+        <div class="amenity-item">
+            <div class="amenity-icon">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <div class="amenity-content">
+                <h3>Fully Equipped Kitchens</h3>
+                <p>Modern kitchens with appliances for preparing your own meals.</p>
+            </div>
+        </div>
+        
+        <div class="amenity-item">
+            <div class="amenity-icon">
+                <i class="fas fa-bed"></i>
+            </div>
+            <div class="amenity-content">
+                <h3>Comfortable Rooms</h3>
+                <p>Fully furnished rooms with study desks, storage, and comfortable bedding.</p>
+            </div>
+        </div>
+        
+        <div class="amenity-item">
+            <div class="amenity-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="amenity-content">
+                <h3>Social Spaces</h3>
+                <p>Common areas for socializing, relaxing, and building community.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery-section">
+    <div class="section-header">
+        <h2>Gallery</h2>
+        <p>Take a virtual tour of our student accommodation facilities and see why TKC is the perfect home away from home.</p>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="room.jpg" alt="Student Room">
+            <div class="gallery-overlay">
+                <h3>Modern Student Rooms</h3>
+                <p>Comfortable and functional living spaces</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="bath.jpg" alt="Common Area">
+            <div class="gallery-overlay">
+                <h3>Social Common Areas</h3>
+                <p>Spaces for relaxation and socialization</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="stud.jpg" alt="Study Area">
+            <div class="gallery-overlay">
+                <h3>Study Facilities</h3>
+                <p>Quiet zones for academic focus</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section id="booking">
+    <div class="section-header">
+        <h2>Book Accommodation</h2>
+        <p>Secure your spot at one of our premium student accommodation properties. Fill out the form below and we'll contact you within 24 hours.</p>
+    </div>
+
+    <div class="booking-container">
+        <div class="form-header">
+            <h3>Inquiry Form</h3>
+            <p>Select a location and service from our properties above, or specify your requirements below.</p>
+        </div>
+
+        <div class="selected-service-display" id="serviceDisplay" style="display: none;">
+            <div>
+                <strong>Selected:</strong>
+                <span id="displayServiceName">No location selected</span>
+            </div>
+            <button type="button" class="change-service" id="changeServiceBtn">Change</button>
+        </div>
+
+        <form id="bookingForm">
+            <input type="hidden" id="selectedService" name="service" value="">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" placeholder="Your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" placeholder="student.email@example.com" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" placeholder="012 753 1177" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="university">University/College</label>
+                    <input type="text" id="university" placeholder="Your educational institution">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="course">Course of Study</label>
+                    <input type="text" id="course" placeholder="e.g., Engineering, Business, etc.">
+                </div>
+                
+                <div class="form-group">
+                    <label for="moveInDate">Preferred Move-in Date</label>
+                    <input type="date" id="moveInDate">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="duration">Intended Stay Duration</label>
+                <select id="duration">
+                    <option value="">Select duration</option>
+                    <option value="semester">One Semester</option>
+                    <option value="year">Full Academic Year</option>
+                    <option value="short-term">Short-term (1-3 months)</option>
+                    <option value="not-sure">Not sure yet</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="requirements">Additional Requirements</label>
+                <textarea id="requirements" rows="4" placeholder="Any specific requirements or questions?"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Submit Accommodation Request
+            </button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <h3>Thank You for Your Interest!</h3>
+            <p>We have received your accommodation inquiry and will contact you within 24 hours to discuss availability and pricing.</p>
+            <p>For immediate assistance, call us at <strong>012 345 6789</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- BACK TO HOME -->
+<div class="back-home-section">
+    <a href="index.html" class="back-home-btn">
+        <i class="fas fa-arrow-left"></i> Back to TKC Properties
+    </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>TKC Student Accommodation</h3>
+            <p>Providing safe, comfortable, and student-friendly accommodation since 2010. Your home away from home for academic success.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="#locations">Our Locations</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="index.html">TKC Properties</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Our Locations</h3>
+            <ul class="footer-links">
+                <li><a href="#locations">Mazuri Accommodation</a></li>
+                <li><a href="#locations">Mazabuka Accommodation</a></li>
+                <li><a href="#locations">Nicola Accommodation</a></li>
+                <li><a href="#locations">Nebo-Hoff Accommodation</a></li>
+                <li><a href="#booking">Check Availability</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Contact Info</h3>
+            <ul class="footer-links">
+                <li><i class="fas fa-map-marker-alt"></i> TKC Student Accommodation Office</li>
+                <li><i class="fas fa-phone"></i> 012 753 1177</li>
+                <li><i class="fas fa-envelope"></i> info@tkcproperties.co.za</li>
+                <li><i class="fas fa-clock"></i> Mon-Fri: 8am-6pm, Sat: 9am-1pm</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>© 2026 TKC Properties & Student Accommodation. All rights reserved. | Think Property, Think TKC Property.</p>
+    </div>
+</footer>
+
+<!-- Notification Overlay -->
+<div class="notification-overlay" id="notificationOverlay">
+    <div class="notification-box" id="notificationBox">
+        <div class="notification-header">
+            <div class="notification-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You!</h3>
+        </div>
+        
+        <div class="notification-body">
+            <p class="notification-message" id="notificationMessage">
+                Your inquiry has been successfully submitted. We'll contact you shortly.
+            </p>
+            
+            <div class="notification-details" id="notificationDetails">
+                <!-- Details will be added dynamically -->
+            </div>
+            
+            <div class="notification-actions">
+                <button class="notification-btn notification-btn-primary" id="notificationCloseBtn">
+                    <i class="fas fa-check"></i> OK, Got It
+                </button>
+                <button class="notification-btn notification-btn-secondary" id="notificationNewBtn">
+                    <i class="fas fa-plus"></i> New Inquiry
+                </button>
+            </div>
+        </div>
+        
+        <div class="notification-footer">
+            <i class="fas fa-clock"></i> We typically respond within <strong>24 hours</strong>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const confettiContainer = document.getElementById('confettiContainer');
+    
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuBtn.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+    
+    // Service selection
+    const selectedServiceInput = document.getElementById('selectedService');
+    const serviceDisplay = document.getElementById('serviceDisplay');
+    const displayServiceName = document.getElementById('displayServiceName');
+    const changeServiceBtn = document.getElementById('changeServiceBtn');
+    const successMessage = document.getElementById('successMessage');
+    const bookingForm = document.getElementById('bookingForm');
+    const notificationOverlay = document.getElementById('notificationOverlay');
+    const notificationBox = document.getElementById('notificationBox');
+    const notificationMessage = document.getElementById('notificationMessage');
+    const notificationDetails = document.getElementById('notificationDetails');
+    const notificationCloseBtn = document.getElementById('notificationCloseBtn');
+    const notificationNewBtn = document.getElementById('notificationNewBtn');
+
+    // Function to create confetti effect
+    function createConfetti() {
+        confettiContainer.innerHTML = '';
+        for (let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.width = Math.random() * 10 + 10 + 'px';
+            confetti.style.height = Math.random() * 10 + 10 + 'px';
+            confetti.style.backgroundColor = i % 3 === 0 ? 'var(--accent)' : 
+                                           i % 3 === 1 ? 'var(--primary)' : 'var(--secondary)';
+            confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+            confetti.style.animation = `confetti ${Math.random() * 3 + 2}s linear forwards`;
+            confetti.style.animationDelay = Math.random() * 1 + 's';
+            confettiContainer.appendChild(confetti);
+        }
+        
+        // Remove confetti after animation
+        setTimeout(() => {
+            confettiContainer.innerHTML = '';
+        }, 5000);
+    }
+
+    // Function to show notification
+    function showNotification(title, message, details, type = 'success') {
+        // Set notification type
+        notificationBox.className = 'notification-box';
+        if (type) {
+            notificationBox.classList.add(`notification-${type}`);
+        }
+        
+        // Set content
+        document.querySelector('.notification-header h3').textContent = title;
+        notificationMessage.textContent = message;
+        
+        // Add details if provided
+        if (details && Object.keys(details).length > 0) {
+            notificationDetails.innerHTML = '';
+            for (const [key, value] of Object.entries(details)) {
+                const detailDiv = document.createElement('div');
+                detailDiv.className = 'notification-detail';
+                detailDiv.innerHTML = `<strong>${key}:</strong> <span>${value}</span>`;
+                notificationDetails.appendChild(detailDiv);
+            }
+            notificationDetails.style.display = 'block';
+        } else {
+            notificationDetails.style.display = 'none';
+        }
+        
+        // Show notification with animation
+        notificationOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        
+        // Add confetti effect for success notifications
+        if (type === 'success') {
+            createConfetti();
+        }
+        
+        // Add a subtle pulse animation after slide up
+        setTimeout(() => {
+            notificationBox.style.animation = 'pulse 1s ease';
+            setTimeout(() => {
+                notificationBox.style.animation = '';
+            }, 1000);
+        }, 600);
+    }
+
+    // Function to hide notification
+    function hideNotification() {
+        notificationOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+
+    function selectService(location, service) {
+        const serviceText = `${location} - ${service}`;
+        
+        // Update form field
+        selectedServiceInput.value = serviceText;
+        
+        // Update display
+        displayServiceName.textContent = serviceText;
+        serviceDisplay.style.display = 'flex';
+        
+        // Scroll to booking form
+        document.getElementById('booking').scrollIntoView({behavior: 'smooth'});
+        
+        // Highlight the selected location card (optional visual feedback)
+        document.querySelectorAll('.location-card').forEach(card => {
+            card.style.border = 'none';
+        });
+    }
+    
+    // Change service button
+    changeServiceBtn.addEventListener('click', () => {
+        document.getElementById('locations').scrollIntoView({behavior: 'smooth'});
+    });
+    
+    // Form submission handler for Student Accommodation
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Validate service selection
+        const selectedServiceInput = document.getElementById('selectedService');
+        if (!selectedServiceInput.value) {
+            showNotification(
+                'Location Required',
+                'Please select a location and service from the Locations section before submitting.',
+                null,
+                'warning'
+            );
+            document.getElementById('locations').scrollIntoView({behavior: 'smooth'});
+            return;
+        }
+        
+        // Get form values
+        const fullName = document.getElementById('fullName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const university = document.getElementById('university').value;
+        const course = document.getElementById('course').value;
+        const moveInDate = document.getElementById('moveInDate').value;
+        const duration = document.getElementById('duration').value;
+        const requirements = document.getElementById('requirements').value;
+        const service = selectedServiceInput.value;
+        
+        // Format date for display
+        let displayDate = 'Not specified';
+        if (moveInDate) {
+            const dateObj = new Date(moveInDate);
+            displayDate = dateObj.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+        
+        // Show success notification
+        showNotification(
+            'Accommodation Inquiry Submitted!',
+            `Your student accommodation inquiry has been received. We'll contact you within 24 hours with availability and pricing details.`,
+            {
+                'Name': fullName,
+                'Selected Location': service,
+                'University': university || 'Not specified',
+                'Course': course || 'Not specified',
+                'Preferred Move-in': displayDate,
+                'Stay Duration': duration || 'Not specified',
+                'Contact Phone': phone,
+                'Contact Email': email,
+                'Additional Requirements': requirements || 'None'
+            },
+            'success'
+        );
+        
+        // Hide form and show success message
+        bookingForm.style.display = 'none';
+        successMessage.style.display = 'block';
+        
+        // Reset the form but keep it hidden
+        setTimeout(() => {
+            bookingForm.reset();
+            serviceDisplay.style.display = 'none';
+            selectedServiceInput.value = '';
+        }, 8000);
+    });
+
+    // Notification button events
+    notificationCloseBtn.addEventListener('click', hideNotification);
+    notificationNewBtn.addEventListener('click', () => {
+        hideNotification();
+        setTimeout(() => {
+            document.getElementById('booking').scrollIntoView({behavior: 'smooth'});
+            bookingForm.style.display = 'block';
+            successMessage.style.display = 'none';
+        }, 300);
+    });
+
+    // Close notification when clicking outside the box
+    notificationOverlay.addEventListener('click', (e) => {
+        if (e.target === notificationOverlay) {
+            hideNotification();
+        }
+    });
+
+    // Close notification with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && notificationOverlay.style.display === 'flex') {
+            hideNotification();
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if(this.getAttribute('href') === '#') return;
+            
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Set minimum date for move-in to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('moveInDate').setAttribute('min', today);
+    
+    // Add some interactivity to location cards
+    document.querySelectorAll('.location-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+</script>
+
+</body>
+</html>

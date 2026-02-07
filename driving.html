@@ -1,0 +1,1655 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo-removebg-preview.png" type="image/x-icon">
+    <title>TKC Driving School | Professional Driving Training & Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", system-ui, sans-serif;
+        }
+
+        :root {
+            --primary: #0f4c75;
+            --secondary: #3282b8;
+            --accent: #ff7e30;
+            --light: #f8f9fa;
+            --dark: #333;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ---------- HEADER & NAVIGATION ---------- */
+        .top-bar {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info-top {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info-top a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info-top a:hover {
+            color: var(--accent);
+        }
+
+        nav {
+            background: white;
+            padding: 0 20px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            height: 70px;
+            width: auto;
+        }
+
+        .brand-text h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            line-height: 1.2;
+        }
+
+        .brand-text .slogan {
+            color: var(--secondary);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* ---------- HERO ---------- */
+        .driving-hero {
+            background: linear-gradient(rgba(15, 76, 117, 0.85), rgba(50, 130, 184, 0.9)), 
+                        url('car4.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .driving-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* ---------- SECTIONS ---------- */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* ---------- SERVICES ---------- */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            border-top: 5px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            border-top-color: var(--accent);
+        }
+
+        .service-card.selected {
+            border-top-color: var(--accent);
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            box-shadow: 0 10px 25px rgba(15, 76, 117, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            background: #f0f7ff;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary);
+            color: white;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ---------- FEATURES ---------- */
+        .features {
+            background-color: #f8f9fa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            min-width: 60px;
+            height: 60px;
+            background: rgba(255, 126, 48, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* ---------- GALLERY ---------- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(15, 76, 117, 0.9));
+            color: white;
+            padding: 20px;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* ---------- BOOKING FORM ---------- */
+        .booking-section {
+            background-color: #f8f9fa;
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: #666;
+        }
+
+        .selected-service-display {
+            background: #f0f7ff;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .selected-service-display span {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .change-service {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .change-service:hover {
+            background: #e56b1a;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        form input:focus, form select:focus, form textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(50, 130, 184, 0.1);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background: #083b5c;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(15, 76, 117, 0.2);
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 25px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-message i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* ---------- NOTIFICATION SYSTEM ---------- */
+        .notification-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .notification-box {
+            background: white;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .notification-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .notification-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            animation: bounce 1s ease infinite;
+            display: inline-block;
+        }
+
+        .notification-header h3 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .notification-body {
+            padding: 35px;
+            text-align: center;
+        }
+
+        .notification-message {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .notification-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: left;
+            border-left: 4px solid var(--accent);
+        }
+
+        .notification-detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .notification-detail:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .notification-detail strong {
+            color: var(--primary);
+            min-width: 120px;
+        }
+
+        .notification-detail span {
+            color: #666;
+            text-align: right;
+            flex: 1;
+        }
+
+        .notification-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .notification-btn {
+            flex: 1;
+            padding: 16px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .notification-btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(15, 76, 117, 0.3);
+        }
+
+        .notification-btn-primary:hover {
+            background: #083b5c;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(15, 76, 117, 0.4);
+        }
+
+        .notification-btn-secondary {
+            background: #f0f7ff;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .notification-btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .notification-footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .notification-footer strong {
+            color: var(--primary);
+        }
+
+        .notification-footer i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes confetti {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Success variation */
+        .notification-success .notification-header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+
+        .notification-success .notification-icon {
+            color: #28a745;
+        }
+
+        /* Warning variation */
+        .notification-warning .notification-header {
+            background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+        }
+
+        .notification-warning .notification-icon {
+            color: #ffc107;
+        }
+
+        /* Error variation */
+        .notification-error .notification-header {
+            background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
+        }
+
+        .notification-error .notification-icon {
+            color: #dc3545;
+        }
+
+        /* Confetti effect */
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent);
+            top: -20px;
+            z-index: 10000;
+            opacity: 0;
+        }
+
+        .confetti:nth-child(odd) {
+            background-color: var(--primary);
+        }
+
+        .confetti:nth-child(even) {
+            background-color: var(--secondary);
+        }
+
+        /* ---------- BACK TO HOME ---------- */
+        .back-home-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .back-home-btn:hover {
+            background: white;
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 992px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .driving-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .notification-box {
+                max-width: 450px;
+            }
+
+            .notification-header {
+                padding: 25px;
+            }
+
+            .notification-body {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                gap: 15px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 25px;
+                right: 20px;
+            }
+            
+            .booking-container {
+                padding: 30px 20px;
+            }
+            
+            .driving-hero {
+                padding: 80px 20px;
+            }
+            
+            .driving-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .notification-box {
+                width: 95%;
+                max-width: 400px;
+            }
+
+            .notification-actions {
+                flex-direction: column;
+            }
+
+            .notification-header {
+                padding: 20px;
+            }
+
+            .notification-body {
+                padding: 20px;
+            }
+
+            .notification-detail {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .notification-detail strong {
+                min-width: auto;
+            }
+
+            .notification-detail span {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .notification-box {
+                width: 98%;
+                max-width: 350px;
+            }
+
+            .notification-header h3 {
+                font-size: 1.6rem;
+            }
+
+            .notification-message {
+                font-size: 1.1rem;
+            }
+
+            .notification-btn {
+                padding: 14px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Confetti elements (will be created dynamically) -->
+<div id="confettiContainer"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="contact-info-top">
+        <a href="tel:0123456789"><i class="fas fa-phone"></i> 012 753 1177</a>
+        <a href="mailto:info@tkcproperties.co.za"><i class="fas fa-envelope"></i> info@tkcproperties.co.za</a>
+    </div>
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <div class="logo-container">
+            <img src="logo-removebg-preview.png" alt="TKC Properties Logo" class="logo">
+            <div class="brand-text">
+                <h2>TKC Driving School</h2>
+                <div class="slogan">Think Property, Think TKC Property</div>
+            </div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#services" class="active">Services</a></li>
+            <li><a href="#features">Why Choose Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#booking">Book Now</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="driving-hero">
+    <div class="hero-content">
+        <h1>Professional Driving Services</h1>
+        <p class="hero-tagline">Gain confidence and independence on the road with our expert driving instruction</p>
+        
+        <div class="hero-badges">
+            <div class="badge"><i class="fas fa-check-circle"></i> Certified Instructors</div>
+            <div class="badge"><i class="fas fa-car"></i> Modern Vehicles</div>
+            <div class="badge"><i class="fas fa-award"></i> High Pass Rate</div>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+    <div class="section-header">
+        <h2>Our Services</h2>
+        <p>We offer a complete range of driving services to help learners and professionals gain confidence and independence on the road.</p>
+    </div>
+
+    <div class="services-list">
+        <div class="service-card" data-service="Learners Training">
+            <div class="service-icon">
+                <i class="fas fa-file-alt"></i>
+            </div>
+            <h3>Learners Training</h3>
+            <p>Comprehensive preparation for your learner's license test with theory lessons and mock tests.</p>
+        </div>
+        
+        <div class="service-card" data-service="Driving Training">
+            <div class="service-icon">
+                <i class="fas fa-car"></i>
+            </div>
+            <h3>Driving Training</h3>
+            <p>Practical driving lessons with certified instructors for all license categories.</p>
+        </div>
+        
+        <div class="service-card" data-service="Date Reservations">
+            <div class="service-icon">
+                <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3>Date Reservations</h3>
+            <p>Assistance with booking your driving test dates at the licensing department.</p>
+        </div>
+        
+        <div class="service-card" data-service="Vehicle Hiring">
+            <div class="service-icon">
+                <i class="fas fa-car-side"></i>
+            </div>
+            <h3>Vehicle Hiring</h3>
+            <p>Rent well-maintained vehicles for your driving test or personal use.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features">
+    <div class="section-header">
+        <h2>Why Choose TKC Driving School</h2>
+        <p>We are committed to providing the highest quality driving education with a focus on safety and confidence.</p>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="feature-content">
+                <h3>Certified Instructors</h3>
+                <p>Our instructors are fully certified, experienced, and patient with learners of all skill levels.</p>
+            </div>
+        </div>
+        
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="feature-content">
+                <h3>Safety First</h3>
+                <p>We prioritize safety in all our training programs with modern, well-maintained vehicles.</p>
+            </div>
+        </div>
+        
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <div class="feature-content">
+                <h3>Flexible Scheduling</h3>
+                <p>Lessons available at times that suit your schedule, including weekends and evenings.</p>
+            </div>
+        </div>
+        
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="feature-content">
+                <h3>High Success Rate</h3>
+                <p>Our students consistently achieve high pass rates on their driving tests.</p>
+            </div>
+        </div>
+        
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="feature-content">
+                <h3>Convenient Locations</h3>
+                <p>Multiple pickup locations and training routes for your convenience.</p>
+            </div>
+        </div>
+        
+        <div class="feature-item">
+            <div class="feature-icon">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <div class="feature-content">
+                <h3>Personalized Training</h3>
+                <p>Customized lesson plans based on your individual learning needs and pace.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <div class="section-header">
+        <h2>Gallery</h2>
+        <p>Take a look at our training facilities, vehicles, and happy students.</p>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="car4.jpg" alt="Driving School">
+            <div class="gallery-overlay">
+                <h3>Professional Instruction</h3>
+                <p>One-on-one training with certified instructors</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="car5.jpg" alt="Driving School">
+            <div class="gallery-overlay">
+                <h3>Modern Vehicles</h3>
+                <p>Well-maintained cars for training and testing</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="car3.jpg" alt="Driving School">
+            <div class="gallery-overlay">
+                <h3>Confident Drivers</h3>
+                <p>Building skills and confidence behind the wheel</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section id="booking" class="booking-section">
+    <div class="section-header">
+        <h2>Book a Service</h2>
+        <p>Fill out the form below and we will contact you soon to schedule your driving lessons.</p>
+    </div>
+
+    <div class="booking-container">
+        <div class="form-header">
+            <h3>Get Started Today</h3>
+            <p>Select a service below or choose one from our services section</p>
+        </div>
+
+        <div class="selected-service-display" id="serviceDisplay" style="display: none;">
+            <div>
+                <strong>Selected Service:</strong>
+                <span id="displayServiceName">No service selected</span>
+            </div>
+            <button type="button" class="change-service" id="changeServiceBtn">Change</button>
+        </div>
+
+        <form id="bookingForm">
+            <input type="hidden" id="selectedService" name="service" value="">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" placeholder="Your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" placeholder="your.email@example.com" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" placeholder="012 345 6789" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preferredDate">Preferred Start Date</label>
+                    <input type="date" id="preferredDate">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="experience">Driving Experience</label>
+                <select id="experience">
+                    <option value="">Select your experience level</option>
+                    <option value="beginner">Beginner (No experience)</option>
+                    <option value="some-experience">Some experience</option>
+                    <option value="experienced">Experienced (Need refresher)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Additional Information</label>
+                <textarea id="message" rows="4" placeholder="Any specific requirements or questions?"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Submit Booking Request
+            </button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <h3>Thank You for Your Booking Request!</h3>
+            <p>We will call you within 24 hours to confirm your booking details.</p>
+            <p>For immediate assistance, call us at <strong>012 753 1177</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- BACK TO HOME -->
+<div class="back-home-section">
+    <a href="index.html" class="back-home-btn">
+        <i class="fas fa-arrow-left"></i> Back to TKC Properties
+    </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>TKC Driving School</h3>
+            <p>Professional driving instruction with certified instructors and modern vehicles. Building confident drivers since 2010.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#features">Why Choose Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="index.html">TKC Properties</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Our Services</h3>
+            <ul class="footer-links">
+                <li><a href="#services">Learners Training</a></li>
+                <li><a href="#services">Driving Training</a></li>
+                <li><a href="#services">Date Reservations</a></li>
+                <li><a href="#services">Vehicle Hiring</a></li>
+                <li><a href="#booking">Package Deals</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Contact Info</h3>
+            <ul class="footer-links">
+                <li><i class="fas fa-map-marker-alt"></i> TKC Driving School, City Center</li>
+                <li><i class="fas fa-phone"></i> 012 753 1177</li>
+                <li><i class="fas fa-envelope"></i> info@tkcproperties.co.za</li>
+                <li><i class="fas fa-clock"></i> Mon-Sat: 7am-7pm, Sun: 9am-2pm</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>© 2026 TKC Properties & Driving School. All rights reserved. | Think Property, Think TKC Property.</p>
+    </div>
+</footer>
+
+<!-- Notification Overlay -->
+<div class="notification-overlay" id="notificationOverlay">
+    <div class="notification-box" id="notificationBox">
+        <div class="notification-header">
+            <div class="notification-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You!</h3>
+        </div>
+        
+        <div class="notification-body">
+            <p class="notification-message" id="notificationMessage">
+                Your inquiry has been successfully submitted. We'll contact you shortly.
+            </p>
+            
+            <div class="notification-details" id="notificationDetails">
+                <!-- Details will be added dynamically -->
+            </div>
+            
+            <div class="notification-actions">
+                <button class="notification-btn notification-btn-primary" id="notificationCloseBtn">
+                    <i class="fas fa-check"></i> OK, Got It
+                </button>
+                <button class="notification-btn notification-btn-secondary" id="notificationNewBtn">
+                    <i class="fas fa-plus"></i> New Inquiry
+                </button>
+            </div>
+        </div>
+        
+        <div class="notification-footer">
+            <i class="fas fa-clock"></i> We typically respond within <strong>24 hours</strong>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuBtn.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+    
+    // Service selection
+    const serviceCards = document.querySelectorAll('.service-card');
+    const selectedServiceInput = document.getElementById('selectedService');
+    const serviceDisplay = document.getElementById('serviceDisplay');
+    const displayServiceName = document.getElementById('displayServiceName');
+    const changeServiceBtn = document.getElementById('changeServiceBtn');
+    const successMessage = document.getElementById('successMessage');
+    const bookingForm = document.getElementById('bookingForm');
+    const notificationOverlay = document.getElementById('notificationOverlay');
+    const notificationBox = document.getElementById('notificationBox');
+    const notificationMessage = document.getElementById('notificationMessage');
+    const notificationDetails = document.getElementById('notificationDetails');
+    const notificationCloseBtn = document.getElementById('notificationCloseBtn');
+    const notificationNewBtn = document.getElementById('notificationNewBtn');
+    const confettiContainer = document.getElementById('confettiContainer');
+
+    // Function to create confetti effect
+    function createConfetti() {
+        confettiContainer.innerHTML = '';
+        for (let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.width = Math.random() * 10 + 10 + 'px';
+            confetti.style.height = Math.random() * 10 + 10 + 'px';
+            confetti.style.backgroundColor = i % 3 === 0 ? 'var(--accent)' : 
+                                           i % 3 === 1 ? 'var(--primary)' : 'var(--secondary)';
+            confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+            confetti.style.animation = `confetti ${Math.random() * 3 + 2}s linear forwards`;
+            confetti.style.animationDelay = Math.random() * 1 + 's';
+            confettiContainer.appendChild(confetti);
+        }
+        
+        // Remove confetti after animation
+        setTimeout(() => {
+            confettiContainer.innerHTML = '';
+        }, 5000);
+    }
+
+    // Function to show notification
+    function showNotification(title, message, details, type = 'success') {
+        // Set notification type
+        notificationBox.className = 'notification-box';
+        if (type) {
+            notificationBox.classList.add(`notification-${type}`);
+        }
+        
+        // Set content
+        document.querySelector('.notification-header h3').textContent = title;
+        notificationMessage.textContent = message;
+        
+        // Add details if provided
+        if (details && Object.keys(details).length > 0) {
+            notificationDetails.innerHTML = '';
+            for (const [key, value] of Object.entries(details)) {
+                const detailDiv = document.createElement('div');
+                detailDiv.className = 'notification-detail';
+                detailDiv.innerHTML = `<strong>${key}:</strong> <span>${value}</span>`;
+                notificationDetails.appendChild(detailDiv);
+            }
+            notificationDetails.style.display = 'block';
+        } else {
+            notificationDetails.style.display = 'none';
+        }
+        
+        // Show notification with animation
+        notificationOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        
+        // Add confetti effect for success notifications
+        if (type === 'success') {
+            createConfetti();
+        }
+        
+        // Add a subtle pulse animation after slide up
+        setTimeout(() => {
+            notificationBox.style.animation = 'pulse 1s ease';
+            setTimeout(() => {
+                notificationBox.style.animation = '';
+            }, 1000);
+        }, 600);
+    }
+
+    // Function to hide notification
+    function hideNotification() {
+        notificationOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+
+    serviceCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const service = this.getAttribute('data-service');
+            
+            // Remove selected class from all cards
+            serviceCards.forEach(c => c.classList.remove('selected'));
+            
+            // Add selected class to clicked card
+            this.classList.add('selected');
+            
+            // Update form field
+            selectedServiceInput.value = service;
+            
+            // Update display
+            displayServiceName.textContent = service;
+            serviceDisplay.style.display = 'flex';
+            
+            // Scroll to booking form
+            document.getElementById('booking').scrollIntoView({behavior: 'smooth'});
+        });
+    });
+    
+    // Change service button
+    changeServiceBtn.addEventListener('click', () => {
+        document.getElementById('services').scrollIntoView({behavior: 'smooth'});
+    });
+    
+    // Form submission handler for Driving School
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Validate service selection
+        const selectedServiceInput = document.getElementById('selectedService');
+        if (!selectedServiceInput.value) {
+            showNotification(
+                'Service Required',
+                'Please select a service from the Services section before submitting.',
+                null,
+                'warning'
+            );
+            document.getElementById('services').scrollIntoView({behavior: 'smooth'});
+            return;
+        }
+        
+        // Get form values
+        const fullName = document.getElementById('fullName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const preferredDate = document.getElementById('preferredDate').value;
+        const experience = document.getElementById('experience').value;
+        const message = document.getElementById('message').value;
+        const service = selectedServiceInput.value;
+        
+        // Format date for display
+        let displayDate = 'Not specified';
+        if (preferredDate) {
+            const dateObj = new Date(preferredDate);
+            displayDate = dateObj.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+        
+        // Show success notification
+        showNotification(
+            'Booking Submitted!',
+            `Your driving lesson booking request has been received. We'll contact you within 24 hours to confirm your schedule.`,
+            {
+                'Name': fullName,
+                'Service': service,
+                'Phone': phone,
+                'Email': email,
+                'Preferred Start': displayDate,
+                'Experience Level': experience || 'Not specified',
+                'Additional Notes': message || 'None'
+            },
+            'success'
+        );
+        
+        // Hide form and show success message
+        bookingForm.style.display = 'none';
+        successMessage.style.display = 'block';
+        
+        // Reset the form but keep it hidden
+        setTimeout(() => {
+            bookingForm.reset();
+            serviceCards.forEach(c => c.classList.remove('selected'));
+            serviceDisplay.style.display = 'none';
+            selectedServiceInput.value = '';
+        }, 8000);
+    });
+
+    // Notification button events
+    notificationCloseBtn.addEventListener('click', hideNotification);
+    notificationNewBtn.addEventListener('click', () => {
+        hideNotification();
+        setTimeout(() => {
+            document.getElementById('booking').scrollIntoView({behavior: 'smooth'});
+            bookingForm.style.display = 'block';
+            successMessage.style.display = 'none';
+        }, 300);
+    });
+
+    // Close notification when clicking outside the box
+    notificationOverlay.addEventListener('click', (e) => {
+        if (e.target === notificationOverlay) {
+            hideNotification();
+        }
+    });
+
+    // Close notification with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && notificationOverlay.style.display === 'flex') {
+            hideNotification();
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if(this.getAttribute('href') === '#') return;
+            
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Set minimum date for booking to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('preferredDate').setAttribute('min', today);
+</script>
+
+</body>
+</html>
